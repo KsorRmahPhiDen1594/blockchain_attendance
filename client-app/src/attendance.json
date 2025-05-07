@@ -1,275 +1,275 @@
 {
-		"abi": [
+	"abi": [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "attendance",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "present",
-						"type": "bool"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timestamp",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_student",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_dob",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_class",
-						"type": "string"
-					}
-				],
-				"name": "editStudent",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_student",
-						"type": "address"
-					}
-				],
-				"name": "getAttendance",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "bool",
-								"name": "present",
-								"type": "bool"
-							},
-							{
-								"internalType": "uint256",
-								"name": "timestamp",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct Attendance.AttendanceRecord[]",
-						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_student",
-						"type": "address"
-					}
-				],
-				"name": "getStudent",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_student",
-						"type": "address"
-					},
-					{
-						"internalType": "bool",
-						"name": "_present",
-						"type": "bool"
-					}
-				],
-				"name": "markAttendance",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_student",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_dob",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_class",
-						"type": "string"
-					}
-				],
-				"name": "registerStudent",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address[]",
-						"name": "_students",
-						"type": "address[]"
-					},
-					{
-						"internalType": "string[]",
-						"name": "_names",
-						"type": "string[]"
-					},
-					{
-						"internalType": "string[]",
-						"name": "_dobs",
-						"type": "string[]"
-					},
-					{
-						"internalType": "string[]",
-						"name": "_classes",
-						"type": "string[]"
-					}
-				],
-				"name": "registerStudentsBulk",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_student",
-						"type": "address"
-					}
-				],
-				"name": "removeStudent",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "students",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "dob",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "className",
-						"type": "string"
-					},
-					{
-						"internalType": "bool",
-						"name": "isRegistered",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "teacher",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
+				"internalType": "address",
+				"name": "",
+				"type": "address"
 			}
 		],
-		"devdoc": {
-			"kind": "dev",
-			"methods": {},
-			"version": 1
-		},
-		"userdoc": {
-			"kind": "user",
-			"methods": {},
-			"version": 1
-		}
+		"name": "attendance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "batchStudents",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "student",
+				"type": "address"
+			}
+		],
+		"name": "getAttendanceStatus",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "student",
+				"type": "address"
+			}
+		],
+		"name": "getStudentInfo",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "batch",
+				"type": "string"
+			}
+		],
+		"name": "getStudentsByBatch",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "date",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "studentAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "isPresent",
+				"type": "bool"
+			}
+		],
+		"name": "markAttendance",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "studentAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "firstName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "lastName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "roll",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "batch",
+				"type": "string"
+			}
+		],
+		"name": "registerStudent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "studentAddrs",
+				"type": "address[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "firstNames",
+				"type": "string[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "lastNames",
+				"type": "string[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "rolls",
+				"type": "string[]"
+			},
+			{
+				"internalType": "string[]",
+				"name": "batches",
+				"type": "string[]"
+			}
+		],
+		"name": "registerStudentsBulk",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "students",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "firstName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "lastName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "roll",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "batch",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "isRegistered",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "teacher",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
+]
+}

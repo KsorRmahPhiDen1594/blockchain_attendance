@@ -1,8 +1,6 @@
 const studentAddresses = [
-  "0x2fF5B8f3C7A703781874a01feba8Bd47D47255e0",
-  "0xD753a4f552A8F5435f165f951Ac9aaB8B0471bDe",
+  "0x5eEF1CF6D8461e62866b8da4684070215409Bc5E",
+  "0x3bFdf2a66866668bC372F34Ba3fa94B649e259C0"
 ];
 
-  
-  export default studentAddresses;
-  
+export default studentAddresses;

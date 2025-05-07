@@ -3,60 +3,38 @@ import Web3 from 'web3';
 import AttendanceContract from '../../../attendance.json';
 import studentAddresses from '../../../constants/studentAddresses';
 
-const CONTRACT_ADDRESS = "0xd8b934580fcE35a11B58C6D73aDeE468a2833fa8";
+const CONTRACT_ADDRESS = "0x072E20351f2E85aa013B45F34a4081cf79c9C937";
 
 function StudentTable() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
     const fetchStudents = async () => {
-      try {
-        const web3 = new Web3(window.ethereum);
-        await window.ethereum.enable();
+      const web3 = new Web3(window.ethereum);
+      await window.ethereum.enable();
 
-        const contract = new web3.eth.Contract(AttendanceContract.abi, CONTRACT_ADDRESS);
-  
-        const results = await Promise.all(studentAddresses.map(async (address) => {
-          try {
-            const student = await contract.methods.getStudent(address).call();
-            const name = student.name;
-            const dob = student.dob;
-            const className = student.className;
-            const isRegistered = student.isRegistered;
-            console.log("check>>>>>>", student);
-console.log("Địa chỉ:", address);
-console.log("→ Tên:", student[0], "Ngày sinh:", student[1], "Lớp:", student[2], "Đã đăng ký:", student[3]);
-  if(!isRegistered) return null;
-            const isPresent = await contract.methods.getAttendance(address).call();
-            
-  
-            return isRegistered
-              ? {
-                  address,
-                  name,
-                  dob,
-                  className,
-                  status: isPresent ? "Có mặt" : "Vắng mặt",
-                }
-              : null;
-          } catch (err) {
-            console.error(`❌ Lỗi khi xử lý địa chỉ: ${address}`, err);
-            return null;
-          }
-        }));
-  
-        const validStudents = results.filter(Boolean);
-        setStudents(validStudents);
-  
-        console.log("✅ Danh sách sinh viên hợp lệ:", validStudents);
-      } catch (err) {
-        console.error("Lỗi tổng khi fetchStudents:", err);
-      }
+      const contract = new web3.eth.Contract(
+        AttendanceContract.abi,
+        CONTRACT_ADDRESS
+      );
+
+      const results = await Promise.all(
+        studentAddresses.map(async (address) => {
+          const s = await contract.methods.getStudentInfo(address).call();
+          const isPresent = await contract.methods.getAttendanceStatus("2025-05-07", address).call();
+          return {
+            address,
+            name: `${s[0]} ${s[1]}`,
+            roll: s[2],
+            batch: s[3],
+            status: isPresent ? 'Có mặt' : 'Vắng'
+          };
+        })
+      );
+      setStudents(results);
     };
-  
     fetchStudents();
   }, []);
-  
 
   return (
     <div>
@@ -65,8 +43,8 @@ console.log("→ Tên:", student[0], "Ngày sinh:", student[1], "Lớp:", studen
         <thead>
           <tr>
             <th>Địa chỉ</th>
-            <th>Tên</th>
-            <th>Ngày sinh</th>
+            <th>Họ tên</th>
+            <th>Mã SV</th>
             <th>Lớp</th>
             <th>Trạng thái</th>
           </tr>
@@ -76,8 +54,8 @@ console.log("→ Tên:", student[0], "Ngày sinh:", student[1], "Lớp:", studen
             <tr key={index}>
               <td>{s.address}</td>
               <td>{s.name}</td>
-              <td>{s.dob}</td>
-              <td>{s.className}</td>
+              <td>{s.roll}</td>
+              <td>{s.batch}</td>
               <td>{s.status}</td>
             </tr>
           ))}
